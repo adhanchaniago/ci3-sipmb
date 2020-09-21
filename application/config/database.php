@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -72,9 +72,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $active_group = 'default';
 $query_builder = TRUE;
+$dbUri = parse_url(getenv('CLEARDB_DATABASE_URL'));
 
 $db['default'] = array(
-	'dsn'	=> '',
+	'dsn'	=> $dbUri,
 	'hostname' => 'localhost',
 	'username' => '',
 	'password' => '',
