@@ -72,14 +72,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 $active_group = 'default';
 $query_builder = TRUE;
-$dbUri = parse_url(getenv('CLEARDB_DATABASE_URL'));
+// $dbUri = parse_url(getenv('CLEARDB_DATABASE_URL'));
 
 $db['default'] = array(
-	'dsn'	=> $dbUri,
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'dsn'	=> '',
+	'hostname' => getenv(DB_HOST),
+	'username' => getenv(DB_USER),
+	'password' => getenv(DB_PASS),
+	'database' => getenv(DB_NAME),
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
