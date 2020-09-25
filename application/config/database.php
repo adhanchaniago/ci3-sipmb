@@ -76,10 +76,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => getenv('DB_HOST'),
-	'username' => getenv('DB_USER'),
-	'password' => getenv('DB_PASS'),
-	'database' => getenv('DB_NAME'),
+	'hostname' => getenv('DB_HOST') ? getenv('DB_HOST') : 'localhost',
+	'username' => getenv('DB_USER') ? getenv('DB_USER') : 'root',
+	'password' => getenv('DB_PASS') ? getenv('DB_PASS') : '',
+	'database' => getenv('DB_NAME') ? getenv('DB_NAME') : 'ci_demo',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
